@@ -1,4 +1,6 @@
 import {Post} from "../model/Post";
+import './BlogOverview.css'
+import PostCard from "./PostCard";
 
 type BlogOverviewProps = {
     posts : Post[]
@@ -6,5 +8,5 @@ type BlogOverviewProps = {
 
 export default function BlogOverview({posts} : BlogOverviewProps ) {
 
-    return <div> {  posts.map( post =>  <div>{ post.title }</div> )   } </div>
+    return <div className={"blog-overview"}> {  posts.map( post => <PostCard post={post} /> )  } </div>
 }
